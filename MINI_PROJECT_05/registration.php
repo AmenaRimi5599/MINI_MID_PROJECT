@@ -58,7 +58,7 @@
 			
 		</table>
 		<hr/>
-		<input type="submit" value="Submit" name="submit">
+		<input type="submit" value="Register" name="submit">
 		<a href="login.php">Login</a>
 		</fieldset>
 	</form>
