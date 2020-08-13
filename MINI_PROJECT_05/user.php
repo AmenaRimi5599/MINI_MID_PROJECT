@@ -12,7 +12,7 @@
 	<form>
 			<table width="50%" border="1" cellpadding="3" cellspacing="0" align="center">
 			<tr>
-				<td align="center"><h1>Welcome User!</h1>
+				<td align="center"><h1>Welcome <?= $_COOKIE['name']?>!</h1>
 				</td>
 			</tr>
 			<tr>
