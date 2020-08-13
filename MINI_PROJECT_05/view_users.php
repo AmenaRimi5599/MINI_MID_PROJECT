@@ -1,3 +1,7 @@
+<?php
+  $conn = mysqli_connect('localhost', 'root', '', 'mini_project');
+  $result = mysqli_query($conn, 'select * from userinfo');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,30 +20,15 @@
 					<td width="180px">EMAIL</td>
 					<td>USER TYPE</td>
 				</tr>
-				<tr>
-					<td height="20px"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr >
-					<td height="20px"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr >
-					<td height="20px"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr >
-					<td height="20px"></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+				<?php  while($data = mysqli_fetch_assoc($result)){ ?>
+                <tr>
+                    <td><?php echo $data['UserId'] ?></td>
+                    <td><?php echo $data['Name'] ?></td>
+                    <td><?php echo $data['Email'] ?></td>
+                    <td><?php echo $data['UserType'] ?></td>
+                </tr>
+                <?php } ?>
+				
 				<tr>
 					<td colspan="4" align="right"><a href="admin.php">Go Home</a></td>
 				</tr>

@@ -17,8 +17,8 @@
 			</tr>
 			<tr>
 				<td align="center">
-					<p><a href="user_profile.php"> Profile</a></p>
-					<p><a href="userchange_password.php">Change Password</a></p>
+					<p><a href="profile.php"> Profile</a></p>
+					<p><a href="change_password.php">Change Password</a></p>
 					<p><a href="login.php">logout</a></p>
 				</td>
 			</tr>
