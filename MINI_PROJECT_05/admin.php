@@ -13,7 +13,7 @@
 		
 			<table border="1" cellspacing="0" cellpadding="5" align="center" width="40%">
 			<tr>
-				<td align="center"><h1>Welcome Admin!</h1>
+				<td align="center"><h1>Welcome <?=$_COOKIE['name']?>!</h1>
 				</td>
 			</tr>
 			<tr>
