@@ -18,6 +18,7 @@
         <td>: <input type="Password" name="pass"></td>
       </tr>
     </table>
+    <input type="checkbox" name="remember">Remember Me
     <hr><br>
     <input type="submit" name="submit" value="login">
     <a href="home.php">Home</a>

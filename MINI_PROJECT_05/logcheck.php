@@ -27,56 +27,68 @@ if(isset($_POST['submit'])){
                     if($CuserType == 'Admin'){
                         $user = ['name'=> $Cname,'userId'=>$Cuserid,'email'=> $Cemail,'pass'=> $Cpassword, 'userType'=>$CuserType];
 
-            
-                        $_SESSION['name']   = $Cname;
-                        $_SESSION['userId'] =$Cuserid;
-                        $_SESSION['email']      = $Cemail;
-                        $_SESSION['pass']       = $password;
-                        $_SESSION['userType']   = $CuserType;
-                        $_SESSION['user']       = $user;
+                        if(isset($_POST['remember']))
+                        {
+                            setcookie('name', $Cname, time()+3600, '/');
+                            setcookie('userId', $Cuserid, time()+3600, '/');
+                            setcookie('email', $Cemail, time()+3600, '/');
+                            setcookie('pass', $Cpassword, time()+3600, '/');
+                            setcookie('userType', $CuserType, time()+3600, '/');
+                            setcookie('status', "OK", time()+3600, '/');
+
+                            echo "Cookie set.";
+                            header('location: admin.php');
+                        }
+                        else
+                        {
+                            $_SESSION['name']       = $Cname;
+                            $_SESSION['userId']     =$Cuserid;
+                            $_SESSION['email']      = $Cemail;
+                            $_SESSION['pass']       = $password;
+                            $_SESSION['userType']   = $CuserType;
+                            $_SESSION['user']       = $user;
+                            $_SESSION['status']  = "Ok";
 
             
-                    
-                        setcookie('name', $Cname, time()+3600, '/');
-                        setcookie('userId', $userid, time()+3600, '/');
-                        setcookie('email', $Cemail, time()+3600, '/');
-                        setcookie('pass', $Cpassword, time()+3600, '/');
-                        setcookie('userType', $CuserType, time()+3600, '/');
-
-                        $_SESSION['status']  = "Ok";
-                        setcookie('status', "OK", time()+3600, '/');
-            
-                        echo "Cookie set.";
-                        header('location: admin.php');
+                            echo "Cookie set.";
+                            header('location: admin.php');
+                        }
+                        
                     }
                     else if($CuserType == 'User'){
                        $user = ['name'=> $Cname,'userId'=>$Cuserid,'email'=> $Cemail,'pass'=> $Cpassword, 'userType'=>$CuserType];
 
+                            if(isset($_POST['remember']))
+                                {
+                                    setcookie('name', $Cname, time()+3600, '/');
+                                    setcookie('userId', $Cuserid, time()+3600, '/');
+                                    setcookie('email', $Cemail, time()+3600, '/');
+                                    setcookie('pass', $Cpassword, time()+3600, '/');
+                                    setcookie('userType', $CuserType, time()+3600, '/');
+                                    setcookie('status', "OK", time()+3600, '/');
+                                    
+                                    echo "Cookie set.";
+                                    header('location: user.php');
+                                }
+                            else
+                            {
+                                $_SESSION['name']       = $Cname;
+                                $_SESSION['userId']     =$Cuserid;
+                                $_SESSION['email']      = $Cemail;
+                                $_SESSION['pass']       = $password;
+                                $_SESSION['userType']   = $CuserType;
+                                $_SESSION['user']       = $user;
+                                $_SESSION['status']  = "Ok";
 
-            
-                        $_SESSION['name']   = $Cname;
-                        $_SESSION['userId'] =$Cuserid;
-                        $_SESSION['email']      = $Cemail;
-                        $_SESSION['pass']       = $password;
-                        $_SESSION['userType']   = $CuserType;
-                        $_SESSION['user']       = $user;
-
-            
-                    
-                        setcookie('name', $Cname, time()+3600, '/');
-                        setcookie('userId', $userid, time()+3600, '/');
-                        setcookie('email', $Cemail, time()+3600, '/');
-                        setcookie('pass', $Cpassword, time()+3600, '/');
-                        setcookie('userType', $CuserType, time()+3600, '/');
-
-                        $_SESSION['status']  = "Ok";
-                        setcookie('status', "OK", time()+3600, '/');
-            
-                        echo "Cookie set.";
-                        header('location: user.php');
+                
+                                echo "Cookie set.";
+                                header('location: user.php');
+                        }
+                        
                     }
+                    
+                
                 }
-     
             } 
         }
     }  
