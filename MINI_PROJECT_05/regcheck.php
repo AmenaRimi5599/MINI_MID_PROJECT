@@ -20,9 +20,9 @@
         }
         else
         {
-             $result = mysqli_query($conn, $query);
 
-        header('location: login.php');
+            $result = mysqli_query($conn, $query);
+            header('location: login.php');
         }
        
     }
