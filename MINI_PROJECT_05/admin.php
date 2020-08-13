@@ -18,8 +18,8 @@
 			</tr>
 			<tr>
 				<td align="center" height="30%">
-					<p><a href="admin_profile.php"> Profile</a></p>
-					<p><a href="adminchange_password.php">Change Password</a></p>
+					<p><a href="profile.php"> Profile</a></p>
+					<p><a href="change_password.php">Change Password</a></p>
 					<p><a href="view_users.php">View Users</a></p>
 					<p><a href="login.php">logout</a></p>
 				</td>
